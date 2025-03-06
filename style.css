@@ -24,11 +24,12 @@ body {
 .sidebar a {
     color: black;
     text-decoration: none;
+    
 }
 
 .sidebar nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10;
 }
 
 .sidebar nav ul li {
