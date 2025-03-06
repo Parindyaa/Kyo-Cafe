@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyo Cafe - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Kyo Cafe Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="overlay"></div>
+                <h2>Welcome to Kyo Cafe</h2>
+                <p>Experience the finest selection of coffee and delightful treats.</p>
+                <p class="hours">Open Daily: 9 AM - 11 PM</p>
+            </section>
+
+            <!-- About Kyo Cafe -->
+            <section class="about">
+                <h2>Why Choose Kyo Cafe?</h2>
+                <p>
+                    At Kyo Cafe, we believe coffee is more than just a drink – it's an experience. 
+                    Our expert baristas craft each cup with love, using premium coffee beans sourced 
+                    from the finest farms around the world.
+                </p>
+                <p>
+                    Whether you're looking for a quiet spot to work, a cozy place to meet friends, 
+                    or just a quick caffeine fix, Kyo Cafe is the perfect place for you.
+                </p>
+            </section>
+
+            <!-- Specialties Section -->
+            <section class="specialties">
+                <h2>Our Specialties</h2>
+                <div class="specialty-grid">
+                    <div class="specialty-item">
+                        <img src="coffee.jpg" alt="Specialty Coffee">
+                        <h3>Signature Coffee Blends</h3>
+                        <p>Rich, smooth, and made from the best beans in the world.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <img src="cake.jpeg" alt="Pastries">
+                        <h3>Freshly Baked Goods</h3>
+                        <p>Our in-house bakery ensures fresh and delicious treats every day.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <img src="cozy.jpg" alt="Cozy Seating">
+                        <h3>Relaxing Ambiance</h3>
+                        <p>A warm, cozy and inviting atmosphere perfect for work, study, or relaxation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Counter Section -->
+            <section class="counter-section">
+                <h2>Our Presence Across the Country</h2>
+                <div class="counter">
+                    <span id="shop-counter" data-target="50">0</span>
+                    <p>Shops Nationwide</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

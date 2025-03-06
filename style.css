@@ -1,0 +1,122 @@
+/* Reset and Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: white;
+    color: black;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+}
+
+/* Content Area */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 220px);
+}
+
+/* Logo Styling */
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('hero3.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2, .hero p {
+    position: relative;
+    z-index: 1;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+}
+
+/* Specialties Section */
+.specialties {
+    text-align: center;
+    padding: 40px;
+}
+
+.specialty-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.specialty-item {
+    width: 250px;
+    text-align: center;
+}
+
+.specialty-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Counter Section */
+.counter-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #27ae60;
+}
