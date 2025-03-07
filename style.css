@@ -24,7 +24,7 @@ html, body {
 /* Adjust logo placement */
 .navbar .logo {
     flex: 1;
-    display: flex;
+    display:flexbox;
     justify-content: flex-start; /* Keep logo slightly away from corner */
 }
 
@@ -77,13 +77,13 @@ html, body {
 .hero {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 700px;
     background: url('hero3.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    text-align: center;
+    text-align:center;
     color: white;
 }
 
