@@ -1,51 +1,56 @@
-/* Reset and Layout */
+/* General Reset */
 html, body {
     height: 100%;
     margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background-color: #333; /* Dark background color */
+    color: white;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 10px 20px;
+    position:static;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 200px; /* Adjust logo size to be larger */
+    width: auto;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 30px; /* Adjust gap between menu items */
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Adjust font size */
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #f39c12; /* Highlight color */
+}
+
+/* Main Content Layout */
+.container {
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    flex: 1;
-    display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px; /* Adjust according to your layout */
-    background:white;
-    color: white;
-    min-height: 100vh; /* Ensures it stretches full height */
-}
-
-.sidebar a {
-    color: black;
-    text-decoration: none;
-    
-}
-
-.sidebar nav ul {
-    list-style: none;
-    padding: 10;
-}
-
-.sidebar nav ul li {
-    padding: 40px 0;
-}
-
-/* Content Area */
-.content {
-    flex: 1;
-    padding: 10px;
-}
-
-/* Logo Styling */
-.logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
 /* Hero Section */
@@ -118,6 +123,58 @@ html, body {
     font-weight: bold;
     color: #27ae60;
 }
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .footer-logo img {
+    height: 60px; /* Adjust footer logo size */
+    width: auto;
+}
+
+.footer .footer-contact, .footer .footer-links {
+    width: 200px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Logo Styling */
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Menu Section */
 .menu-grid {
     display: flex;
     flex-wrap: wrap;
@@ -174,6 +231,8 @@ html, body {
 .menu-item button:hover {
     background-color: #2ecc71; /* Darker green on hover */
 }
+
+/* Cart Section */
 #cart-container {
     display: flex;
     flex-direction: column;
@@ -200,71 +259,11 @@ html, body {
     cursor: pointer;
 }
 
-button:hover {
+.cart-item button:hover {
     background-color: darkred;
 }
 
+/* Header and Footer Adjustments */
 h1 {
     text-align: center;
-}
-.footer {
-    background-color: #2c2c2c;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%; /* Ensure full width */
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    align-items: center;
-    gap: 20px;
-    text-align: left;
-}
-
-.footer-logo img {
-    width: 120px;
-}
-
-.footer-contact h3,
-.footer-links h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.footer-contact p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.footer-contact a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 5px 0;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #ffcc00;
-    font-size: 14px;
-}
-
-/* Ensure footer always stays at the bottom */
-.footer-bottom {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-    font-size: 14px;
 }
