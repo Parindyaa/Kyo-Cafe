@@ -8,28 +8,46 @@ html, body {
 /* Navbar Styles */
 .navbar {
     width: 100%;
-    background-color: #333; /* Dark background color */
-    color: white;
+    height: 50px;
+    background-color: #fff; /* White background */
     display: flex;
-    justify-content:space-around;
     align-items: center;
-    padding: 10px 20px;
-    position:static;
+    justify-content: space-between; /* Space between logo and nav */
+    padding: 15px 40px; /* Padding for spacing */
+    position:static; /* Fixed navbar at the top */
     top: 0;
+    left: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
+/* Adjust logo placement */
+.navbar .logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Keep logo slightly away from corner */
+}
+
+/* Adjust logo size without affecting the navbar */
 .navbar .logo img {
-    height: 200px; /* Adjust logo size to be larger */
-    width: auto;
+    height: 100px;  /* Set the desired height for the logo */
+    width: auto;   /* Keep the aspect ratio intact */
+}
+
+
+/* Center navbar options */
+.navbar nav {
+    flex: 2; /* Give nav enough space to center */
+    display: flex;
+    justify-content: center; /* Center nav items */
 }
 
 .navbar nav ul {
     list-style: none;
     display: flex;
+    gap: 40px; /* Space between menu items */
     margin: 0;
     padding: 0;
-    gap: 30px; /* Adjust gap between menu items */
 }
 
 .navbar nav ul li {
@@ -37,14 +55,16 @@ html, body {
 }
 
 .navbar nav ul li a {
-    color: white;
+    color: #333; /* Dark text color */
     text-decoration: none;
-    font-size: 18px; /* Adjust font size */
-    transition: color 0.3s ease;
+    font-size: 16px; /* Standard font size */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .navbar nav ul li a:hover {
-    color: #f39c12; /* Highlight color */
+    color: #f39c12; /* Highlight color on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
 }
 
 /* Main Content Layout */
@@ -138,7 +158,7 @@ html, body {
 }
 
 .footer .footer-logo img {
-    height: 60px; /* Adjust footer logo size */
+    height: 200px; /* Adjust footer logo size */
     width: auto;
 }
 
