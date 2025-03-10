@@ -30,7 +30,7 @@ html, body {
 
 /* Adjust logo size without affecting the navbar */
 .navbar .logo img {
-    height: 100px;  /* Set the desired height for the logo */
+    height: 250px;  /* Set the desired height for the logo */
     width: auto;   /* Keep the aspect ratio intact */
 }
 
@@ -44,7 +44,7 @@ html, body {
 
 .navbar nav ul {
     list-style: none;
-    display: flex;
+    display:flex;
     gap: 40px; /* Space between menu items */
     margin: 0;
     padding: 0;
