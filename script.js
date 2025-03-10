@@ -61,16 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // Menu items for each category
 const menuItems = {
     "baked-items": [
-        { id: 1, name: "Rolls", price: 2.50, image: "images/rolls.jpg" },
-        { id: 2, name: "Pastries", price: 3.00, image: "images/pastries.jpg" },
-        { id: 3, name: "Egg Rolls", price: 2.80, image: "images/eggrolls.jpg" },
-        { id: 4, name: "Fish Rolls", price: 3.20, image: "images/fishrolls.jpg" },
-        { id: 5, name: "Chicken Rolls", price: 3.50, image: "images/chickenrolls.jpg" },
-        { id: 6, name: "Pizza", price: 4.00, image: "images/cinnamonrolls.jpg" },
-        { id: 7, name: "Chicken Pie", price: 4.00, image: "images/cinnamonrolls.jpg" },
-        { id: 8, name: "Fish Pattie", price: 4.00, image: "images/cinnamonrolls.jpg" },
-        { id: 9, name: "Chicken Pattie", price: 4.00, image: "images/cinnamonrolls.jpg" },
-        { id: 10, name: "Veg Pattie", price: 4.00, image: "images/cinnamonrolls.jpg" },
+        { id: 1, name: "Rolls", price: 2.50, image: "Images/rolls1.jpg" },
+        { id: 2, name: "Pastries", price: 3.00, image: "Images/Fish-Pastry.jpg" },
+        { id: 3, name: "Egg Rolls", price: 2.80, image: "Images/egg rolls.jpg" },
+        { id: 4, name: "Chicken Rolls", price: 3.20, image: "Images/Chicken rolls.jpg" },
+        { id: 5, name: "Fish Rolls", price: 3.50, image: "Images/Fish rolls.jpg" },
+        { id: 6, name: "Pizza", price: 4.00, image: "Images/pizza.jpg" },
+        { id: 7, name: "Fish pattie", price: 4.00, image: "Images/Fish-Pastry.jpg" },
+        { id: 8, name: "Chicken Pie", price: 4.00, image: "Images/chicken pie.jpg" },
+        { id: 9, name: "Chicken Pattie", price: 4.00, image: "Images/chicken pattie.jpg" },
+        { id: 10, name: "Veg Pattie", price: 4.00, image: "Images/veg patt.jpg" },
     ],
     "Desserts": [
         { id: 11, name: "Cinnomen Roll", price: 2.50, image: "images/cupcake.jpg" },
@@ -79,7 +79,7 @@ const menuItems = {
         { id: 14, name: "Biscuit Pudding", price: 4.00, image: "images/cinnamonrolls.jpg" },
         { id: 15, name: "Chocolate Moose", price: 4.00, image: "images/cinnamonrolls.jpg" },
         { id: 16, name: "Chocolate Brownies", price: 4.00, image: "images/cinnamonrolls.jpg" },
-        { id: 17, name: "Doughnut", price: 4.00, image: "images/cinnamonrolls.jpg" },
+        { id: 17, name: "Doughnut", price: 4.00, image: "Images/doughnut.jpg" },
         { id: 18, name: "Muffins", price: 4.00, image: "images/cinnamonrolls.jpg" },
 
     ],
