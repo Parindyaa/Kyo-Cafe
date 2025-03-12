@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { id: 10, name: "Veg Pattie", price: 4.00, image: "Images/veg patt.jpg" },
         ],
         "Desserts": [
-            { id: 11, name: "Cinnomen Roll", price: 2.50, image: "images/cupcake.jpg" },
+            { id: 11, name: "Cinnamon roll",price:2.50, image: "Images/cinnamon.jpg"},
             { id: 12, name: "Pudding", price: 4.50, image: "images/carrotcake.jpg" },
             { id: 13, name: "IceCream With Jelly", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 14, name: "Biscuit Pudding", price: 4.00, image: "images/cinnamonrolls.jpg" },
