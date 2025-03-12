@@ -2,75 +2,71 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background */
+}
+
+/* Ensure content takes full height */
+.container {
+    min-height: 100vh; /* Ensures content takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar Styles */
 .navbar {
-    width: 100%;
-    height: 50px;
+    width: 100%; /* Full width */
+    height: 70px; /* Set a fixed height */
     background-color: #fff; /* White background */
     display: flex;
     align-items: center;
     justify-content: space-between; /* Space between logo and nav */
-    padding: 15px 40px; /* Padding for spacing */
-    position:static; /* Fixed navbar at the top */
+    padding: 0 40px; /* Adjust padding */
+    position: fixed; /* Fixed navbar */
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
-/* Adjust logo placement */
-.navbar .logo {
-    flex: 1;
-    display:flexbox;
-    justify-content: flex-start; /* Keep logo slightly away from corner */
-}
-
-/* Adjust logo size without affecting the navbar */
+/* Adjust logo size */
 .navbar .logo img {
-    height: 250px;  /* Set the desired height for the logo */
-    width: auto;   /* Keep the aspect ratio intact */
+    height: 250px;  /* Set the height to match navbar */
+    width: auto;
 }
-
 
 /* Center navbar options */
 .navbar nav {
-    flex: 2; /* Give nav enough space to center */
+    flex: 2;
     display: flex;
-    justify-content: center; /* Center nav items */
+    justify-content: center;
 }
 
 .navbar nav ul {
     list-style: none;
-    display:flex;
-    gap: 40px; /* Space between menu items */
+    display: flex;
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
 
-.navbar nav ul li {
-    margin: 0;
-}
-
 .navbar nav ul li a {
-    color: #333; /* Dark text color */
+    color: #333;
     text-decoration: none;
-    font-size: 16px; /* Standard font size */
+    font-size: 16px;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar nav ul li a:hover {
-    color: #f39c12; /* Highlight color on hover */
-    transform: scale(1.1); /* Slight scale effect on hover */
+    color: #f39c12;
+    transform: scale(1.1);
 }
 
-/* Main Content Layout */
-.container {
-    display: flex;
-    flex-direction: column;
+/* Push content down so it doesn't hide under fixed navbar */
+body {
+    padding-top: 80px; /* Adjust according to navbar height */
 }
 
 /* Hero Section */
@@ -81,9 +77,9 @@ html, body {
     background: url('hero3.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    text-align:center;
+    text-align: center;
     color: white;
 }
 
