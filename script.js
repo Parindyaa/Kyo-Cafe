@@ -1,25 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Counter Animation
     const counter = document.getElementById("shop-counter");
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
+    if (counter) {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
 
-    const updateCounter = () => {
-        if (count < target) {
-            count += 1;
-            counter.textContent = count;
-            setTimeout(updateCounter, 50);
-        }
-    };
+        const updateCounter = () => {
+            if (count < target) {
+                count += 1;
+                counter.textContent = count;
+                setTimeout(updateCounter, 50);
+            }
+        };
+        updateCounter();
+    }
 
-    updateCounter();
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
+    // Cart Management
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     function updateCartCount() {
-        document.getElementById("cart-count").innerText = cart.length;
+        const cartCountElement = document.getElementById("cart-count");
+        if (cartCountElement) {
+            cartCountElement.innerText = cart.length;
+        }
     }
 
     function addToCart(product) {
@@ -28,27 +31,38 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCartCount();
     }
 
-    if (document.getElementById("menu-items")) {
+    // Fetch and Display Menu Items
+    const menuContainer = document.getElementById("menu-items");
+    if (menuContainer) {
         fetch("products.json")
             .then(response => response.json())
             .then(data => {
-                const menuContainer = document.getElementById("menu-items");
                 data.forEach(item => {
                     const div = document.createElement("div");
                     div.classList.add("menu-item");
                     div.innerHTML = `
                         <h3>${item.name}</h3>
                         <p>${item.price}</p>
-                        <button onclick='addToCart(${JSON.stringify(item)})'>Add to Cart</button>
+                        <button class="add-to-cart" data-item='${JSON.stringify(item)}'>Add to Cart</button>
                     `;
                     menuContainer.appendChild(div);
                 });
-            });
+
+                // Attach event listeners after elements are created
+                document.querySelectorAll(".add-to-cart").forEach(button => {
+                    button.addEventListener("click", function () {
+                        const product = JSON.parse(this.getAttribute("data-item"));
+                        addToCart(product);
+                    });
+                });
+            })
+            .catch(error => console.error("Error loading products:", error));
     }
 
-    if (document.getElementById("cart-items")) {
-        const cartContainer = document.getElementById("cart-items");
-        cart.forEach((item, index) => {
+    // Display Cart Items
+    const cartContainer = document.getElementById("cart-items");
+    if (cartContainer) {
+        cart.forEach(item => {
             const div = document.createElement("div");
             div.classList.add("menu-item");
             div.innerHTML = `<h3>${item.name}</h3><p>${item.price}</p>`;
@@ -57,7 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateCartCount();
+
+    // Initialize Swiper only if the container exists
+    if (document.querySelector(".swiper-container")) {
+        var swiper = new Swiper(".swiper-container", {
+            loop: true,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    }
 });
+
 // Menu items for each category
 const menuItems = {
     "baked-items": [

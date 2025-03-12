@@ -6,21 +6,21 @@
     <title>Kyo Cafe - Home</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="Images/Kyo Cafe.png" alt="Logo">
+            <img src="Images/Kyo Cafe.png" alt="Kyo Cafe Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-                    </ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
         </nav>
-       
     </div>
 
     <div class="container">
@@ -48,26 +48,70 @@
             </section>
 
             <!-- Specialties Section -->
-            <section class="specialties">
-                <h2>Our Specialties</h2>
-                <div class="specialty-grid">
-                    <div class="specialty-item">
-                        <img src="coffee.jpg" alt="Specialty Coffee">
-                        <h3>Signature Coffee Blends</h3>
-                        <p>Rich, smooth, and made from the best beans in the world.</p>
-                    </div>
-                    <div class="specialty-item">
-                        <img src="cake.jpeg" alt="Pastries">
-                        <h3>Freshly Baked Goods</h3>
-                        <p>Our in-house bakery ensures fresh and delicious treats every day.</p>
-                    </div>
-                    <div class="specialty-item">
-                        <img src="cozy.jpg" alt="Cozy Seating">
-                        <h3>Relaxing Ambiance</h3>
-                        <p>A warm, cozy and inviting atmosphere perfect for work, study, or relaxation.</p>
-                    </div>
+<section class="specialties">
+    <h2>Our Specialties</h2>
+
+    <!-- Swiper Slider -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="coffee.jpg" alt="Specialty Coffee">
+                    <h3>Signature Coffee Blends</h3>
+                    <p>Rich, smooth, and made from the best beans in the world.</p>
                 </div>
-            </section>
+            </div>
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="Images/goods.jpg" alt="Pastries">
+                    <h3>Freshly Baked Goods</h3>
+                    <p>Our in-house bakery ensures fresh and delicious treats every day.</p>
+                </div>
+            </div>
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="Images/cozy.jpg" alt="Cozy Seating">
+                    <h3>Relaxing Ambiance</h3>
+                    <p>A warm, cozy, and inviting atmosphere perfect for work, study, or relaxation.</p>
+                </div>
+            </div>
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="Images/service.jpg" alt="Customer Service">
+                    <h3>Good Customer Service</h3>
+                    <p>A welcoming atmosphere and friendly staff.</p>
+                </div>
+            </div>
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="Images/delivery.jpg" alt="Delivery Service">
+                    <h3>Online Delivery Service</h3>
+                    <p>Order from our website, and we deliver your goods anywhere you want.</p>
+                </div>
+            </div>
+            <div class="swiper-slide specialty-item">
+                <div class="specialty-card">
+                    <img src="Images/location.jpg" alt="Location">
+                    <h3>Easy to Find</h3>
+                    <p>Kyo Cafe is located on Galle Road, Bambalapitiya, easy to locate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper Navigation Buttons (Moved below specialties) -->
+    <div class="swiper-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+<!-- Include Swiper.js -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 
             <!-- Counter Section -->
             <section class="counter-section">
@@ -80,11 +124,11 @@
         </main>
     </div>
 
-     <!-- Footer Section -->
-     <footer class="footer">
+    <!-- Footer Section -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="logo Cafe.png" alt="Kyo Cafe Logo">
+                <img src="Images/logo Cafe.png" alt="Kyo Cafe Logo">
             </div>
 
             <div class="footer-contact">
@@ -106,5 +150,6 @@
             <p>&copy; 2025 Kyo Cafe. All Rights Reserved.</p>
         </div>
     </footer>
-</body>
+
+    </body>
 </html>
