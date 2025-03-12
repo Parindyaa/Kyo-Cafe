@@ -104,109 +104,50 @@ body {
     background: #f9f9f9;
 }
 
-/* Swiper container */
-.swiper-container {
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-}
-
-/* Each Swiper slide */
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Specialties Section */
+.specialties {
     padding: 20px;
-}
-
-/* Card Styling */
-.specialty-card {
-    position: relative;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-    max-width: 350px; /* Card size */
+    background-color: #f4f4f4;
     text-align: center;
-    padding: 20px;
 }
 
-.specialty-card img {
+.specialties h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.specialties-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.specialty-card {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.specialty-card img,
+.specialty-card video {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
 }
 
 .specialty-card h3 {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #333;
+    font-size: 1.5em;
+    margin-top: 15px;
 }
 
 .specialty-card p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Hover effect for card */
-.specialty-card:hover {
-    transform: translateY(-10px);
-}
-
-.specialty-card:hover img {
-    transform: scale(1.05);
-}
-
-/* Swiper navigation styling */
-.swiper-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.swiper-button-prev, .swiper-button-next {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 18px;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.swiper-button-prev:hover, .swiper-button-next:hover {
-    background-color: #555;
-}
-
-/* Swiper Pagination */
-.swiper-pagination {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.swiper-pagination-bullet {
-    background-color: #333;
-    opacity: 0.7;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #f4a261;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .specialty-card {
-        max-width: 100%; /* Cards take full width on smaller screens */
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-        font-size: 16px;
-        padding: 8px;
-    }
+    color: #555;
+    margin-top: 10px;
 }
 
 
