@@ -89,12 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Desserts": [
             { id: 11, name: "Cinnamon roll",price:2.50, image: "Images/cinnamon.jpg"},
             { id: 12, name: "Pudding", price: 4.50, image: "Images/pudding.jpg" },
-            { id: 13, name: "IceCream With Jelly", price: 5.00, image: "Images/icecream.jpg" },
-            { id: 14, name: "Biscuit Pudding", price: 4.00, image: "images/cinnamonrolls.jpg" },
-            { id: 15, name: "Chocolate Moose", price: 4.00, image: "images/cinnamonrolls.jpg" },
-            { id: 16, name: "Chocolate Brownies", price: 4.00, image: "images/cinnamonrolls.jpg" },
+            { id: 13, name: "IceCream ", price: 5.00, image: "Images/icecream.jpg" },
+            { id: 14, name: "Biscuit Pudding", price: 4.00, image: "Images/biscuit pudding.jpg" },
+            { id: 15, name: "Chocolate Moose", price: 4.00, image: "Images/moose.jpg" },
+            { id: 16, name: "Chocolate Brownies", price: 4.00, image: "Images/brownies.jpg" },
             { id: 17, name: "Doughnut", price: 4.00, image: "Images/doughnut.jpg" },
-            { id: 18, name: "Muffins", price: 4.00, image: "images/cinnamonrolls.jpg" },
+            { id: 18, name: "Muffins", price: 4.00, image: "Images/muffins.jpg" },
         ],
         "Bread and Sandwiches": [
             { id: 19, name: "Chicken Sandwich", price: 2.50, image: "images/cupcake.jpg" },
