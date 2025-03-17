@@ -148,29 +148,29 @@ function renderMenu(category, items) {
     items.forEach(item => {
         const menuItemCard = document.createElement('div');
         menuItemCard.classList.add('menu-item');
-        
+
         menuItemCard.innerHTML = `
             <img src="${item.image}" alt="${item.name}">
             <h4>${item.name}</h4>
             <p>$${item.price.toFixed(2)}</p>
             <button onclick="addToCart(${item.id})">Add to Cart</button>
         `;
-        
+
         categoryGrid.appendChild(menuItemCard);
     });
 }
 
 function addToCart(itemId) {
     const item = Object.values(menuItems).flat().find(item => item.id === itemId);
+    
+    if (!item) {
+        console.error("Item not found");
+        return;
+    }
 
-    // Add item to cart
     cart.push(item);
-
-    // Store updated cart in localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    console.log(`Item with ID ${itemId} added to cart`);
+    
     alert(`${item.name} added to cart!`);
-
     updateCartCount();
 }
