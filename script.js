@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Bread and Sandwiches": [
             { id: 19, name: "Chicken Sandwich", price: 2.50, image: "Images/c-sandwich.jpg" },
             { id: 20, name: "Fish Sandwich", price: 4.50, image: "Images/tuna.jpeg" },
-            { id: 21, name: "Cheese Sandwich", price: 5.00, image: "Images/muffins.jpg" },
-            { id: 22, name: "Club Sandwich", price: 4.00, image: "Images/muffins.jpg" },
+            { id: 21, name: "Cheese Sandwich", price: 5.00, image: "Images/cheese.jpg" },
+            { id: 22, name: "Submarine", price: 4.00, image: "Images/submarine.jpg" },
             { id: 23, name: "Veg Sandwich", price: 4.00, image: "Images/muffins.jpg" },
             { id: 24, name: "Egg Sandwich", price: 4.00, image: "Images/muffins.jpg" },
             { id: 25, name: "Grilled Cheese", price: 4.00, image: "Images/muffins.jpg" },
