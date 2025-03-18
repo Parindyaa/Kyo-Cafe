@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
             { id: 18, name: "Muffins", price: 4.00, image: "Images/muffins.jpg" },
         ],
         "Bread and Sandwiches": [
-            { id: 19, name: "Chicken Sandwich", price: 2.50, image: "Images/muffins.jpg" },
-            { id: 20, name: "Fish Sandwich", price: 4.50, image: "Images/muffins.jpg" },
+            { id: 19, name: "Chicken Sandwich", price: 2.50, image: "Images/c-sandwich.jpg" },
+            { id: 20, name: "Fish Sandwich", price: 4.50, image: "Images/tuna.jpeg" },
             { id: 21, name: "Cheese Sandwich", price: 5.00, image: "Images/muffins.jpg" },
             { id: 22, name: "Club Sandwich", price: 4.00, image: "Images/muffins.jpg" },
             { id: 23, name: "Veg Sandwich", price: 4.00, image: "Images/muffins.jpg" },
