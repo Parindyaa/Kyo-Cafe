@@ -120,18 +120,19 @@ document.addEventListener("DOMContentLoaded", function () {
             { id: 37, name: "Chocolate-Milk Shake", price: 5.00, image: "Images/chocolate.jpg" },
             { id: 38, name: "Strawberry-Milk Shake", price: 5.00, image: "Images/strawberry.jpg" },
             { id: 39, name: "Bubble-Tea", price: 5.00, image: "Images/bubble.jpg" },
-            { id: 40, name: "Cola & Sprite", price: 5.00, image: "Images/muffins.jpg" },
+            { id: 40, name: "Lemonade", price: 5.00, image: "Images/lemonade.jpg" },
+            { id: 41, name: "Hot-Chocolate", price: 5.00, image: "Images/hot choco.jpg" },
         ],
         "cakes": [
-            { id: 19, name: "Cupcake", price: 2.50, image: "images/cupcake.jpg" },
-            { id: 20, name: "Carrot Cake", price: 4.50, image: "images/carrotcake.jpg" },
-            { id: 21, name: "Coffee Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 22, name: "Ribbon Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 23, name: "Cake Pieces", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 24, name: "Caramel Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 25, name: "Cheese Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 26, name: "Red-Velvet Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 27, name: "Coconut cake (Signature)", price: 5.00, image: "images/coffeecake.jpg" }
+            { id: 42, name: "Cupcake", price: 2.50, image: "images/cupcake.jpg" },
+            { id: 43, name: "Carrot Cake", price: 4.50, image: "images/carrotcake.jpg" },
+            { id: 44, name: "Coffee Cake", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 45, name: "Ribbon Cake", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 46, name: "Cake Pieces", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 47, name: "Caramel Cake", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 48, name: "Cheese Cake", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 49, name: "Red-Velvet Cake", price: 5.00, image: "images/coffeecake.jpg" },
+            { id: 50, name: "Coconut cake (Signature)", price: 5.00, image: "images/coffeecake.jpg" }
         ]
     };
 
