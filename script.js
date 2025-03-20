@@ -124,15 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
             { id: 41, name: "Hot-Chocolate", price: 5.00, image: "Images/hot choco.jpg" },
         ],
         "cakes": [
-            { id: 42, name: "Cupcake", price: 2.50, image: "images/cupcake.jpg" },
-            { id: 43, name: "Carrot Cake", price: 4.50, image: "images/carrotcake.jpg" },
+            { id: 42, name: "Cupcake", price: 2.50, image: "Images/cup.jpg" },
+            { id: 43, name: "Carrot Cake", price: 4.50, image: "images/carrot.jpg" },
             { id: 44, name: "Coffee Cake", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 45, name: "Ribbon Cake", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 46, name: "Cake Pieces", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 47, name: "Caramel Cake", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 48, name: "Cheese Cake", price: 5.00, image: "images/coffeecake.jpg" },
             { id: 49, name: "Red-Velvet Cake", price: 5.00, image: "images/coffeecake.jpg" },
-            { id: 50, name: "Coconut cake (Signature)", price: 5.00, image: "images/coffeecake.jpg" }
+            { id: 50, name: "Fruit Gateau", price: 5.00, image: "images/coffeecake.jpg" }
         ]
     };
 
