@@ -126,13 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "cakes": [
             { id: 42, name: "Cupcake", price: 2.50, image: "Images/cup.jpg" },
             { id: 43, name: "Carrot Cake", price: 4.50, image: "images/carrot.jpg" },
-            { id: 44, name: "Coffee Cake", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 45, name: "Ribbon Cake", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 46, name: "Cake Pieces", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 47, name: "Caramel Cake", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 48, name: "Cheese Cake", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 49, name: "Red-Velvet Cake", price: 5.00, image: "Images/coffeecake.jpg" },
-            { id: 50, name: "Fruit Gateau", price: 5.00, image: "Images/coffeecake.jpg" }
+            { id: 44, name: "Coffee Cake", price: 5.00, image: "Images/coffee cake.jpg" },
+            { id: 45, name: "Ribbon Cake", price: 5.00, image: "Images/ribbon.jpg" },
+            { id: 46, name: "Cake Pieces", price: 5.00, image: "Images/pieses.jpg" },
+            { id: 47, name: "Caramel Cake", price: 5.00, image: "Images/caramel.jpg" },
+            { id: 48, name: "Cheese Cake", price: 5.00, image: "Images/cheese cake.jpg" },
+            { id: 49, name: "Red-Velvet Cake", price: 5.00, image: "Images/red.jpg" },
+            { id: 50, name: "Fruit Gateau", price: 5.00, image: "Images/fruit.jpg" }
         ]
     };
 
