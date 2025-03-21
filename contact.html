@@ -24,26 +24,31 @@
             </ul>
         </nav>
     </div>
-        <main class="content">  <!-- Added a wrapper for main content -->
-            <section class="contact">
+
+    <main class="content">
+        <section class="contact-container">
+            <!-- Left Side: Contact Form -->
+            <div class="contact-form">
                 <h2>Contact Us</h2>
-                <p>Phone: +123 456 7890</p>
-                <p>Email: info@kyocafe.com</p>
                 <form>
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Your Physical Address" required>
+                    <input type="tel" placeholder="Your Contact Number" required>
                     <textarea placeholder="Your Message"></textarea>
                     <button type="submit">Send</button>
                 </form>
-                <div class="contact-image">
-                    <img src="Images/contact.jpg" alt="Cafe Interior">
-                </div>
-            </section>
-        </main> <!--Closing main content wrapper -->
-    </div>
-    
-     <!-- Footer Section -->
-     <footer class="footer">
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="contact-image">
+                <img src="Images/contact.jpg" alt="Cafe Interior">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
                 <img src="logo Cafe.png" alt="Kyo Cafe Logo">
@@ -69,4 +74,4 @@
         </div>
     </footer>
 </body>
-</html
+</html>

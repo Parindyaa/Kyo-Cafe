@@ -333,15 +333,18 @@ body {
     border-radius: 10px;
     object-fit: cover;
 }
+/* General Reset */
+
+
 /* Contact Page Layout */
 .contact-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    max-width: 1000px;
     margin: 50px auto;
     padding: 20px;
     gap: 30px;
+    max-width: 1000px;
 }
 
 /* Contact Form (Left Side) */
@@ -351,17 +354,11 @@ body {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Ensures proper text alignment */
 }
 
 .contact-form h2 {
     font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.contact-form p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contact-form form {
@@ -371,9 +368,9 @@ body {
 
 .contact-form input, 
 .contact-form textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -395,15 +392,14 @@ body {
 /* Contact Image (Right Side) */
 .contact-image {
     flex: 1;
-    padding-left: 20px; /* Adds space between form and image */
+    padding-left: 20px;
     display: flex;
-    justify-content:flex-end; /* Moves image to the right but adds space */
-    padding-right:100px;
+    justify-content: center;
 }
 
 .contact-image img {
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -415,20 +411,19 @@ body {
         text-align: center;
     }
 
-    .contact-form {
-        text-align: center; /* Center align text in mobile view */
+    .contact-image {
+        justify-content: center;
     }
 
-    .contact-image {
-        justify-content: center; /* Centers the image on smaller screens */
+    .contact-form input, 
+    .contact-form textarea {
+        max-width: 90%;
     }
 
     .contact-image img {
         max-width: 90%;
     }
 }
-
-
 
 /* Footer Styles */
 .footer {
