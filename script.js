@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { id: 7, name: "Fish pattie", price: 4.00, image: "Images/Fish-Pastry.jpg" },
             { id: 8, name: "Chicken Pie", price: 4.00, image: "Images/chicken pie.jpg" },
             { id: 9, name: "Chicken Pattie", price: 4.00, image: "Images/chicken pattie.jpg" },
-            { id: 10, name: "Veg Pattie", price: 4.00, image: "Images/veg patt.jpg" },
+            { id: 10, name: "Veg Pattie", price: 4.00, image: "Images/vegs.jpg" },
         ],
         "Desserts": [
             { id: 11, name: "Cinnamon roll",price:2.50, image: "Images/cinnamon.jpg"},

@@ -104,6 +104,24 @@ body {
     background: #f9f9f9;
 }
 
+.about img {
+    width: 80%; /* Increase image width */
+    max-width: 1000px; /* Set a max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spacing */
+    margin: 20px auto; /* Center the image */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about img {
+        width: 95%; /* Make it almost full width on smaller screens */
+        max-width: 100%; /* Remove any max-width limit */
+    }
+}
+
+
 /* Specialties Section */
 .specialties {
     padding: 20px;
