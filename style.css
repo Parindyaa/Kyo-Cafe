@@ -183,39 +183,40 @@ body {
     margin: 0 auto 30px auto;
 }
 
-/* Four-piece square layout */
+/* Larger Four-Piece Square Layout */
 .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    max-width: 800px;
-    margin: 30px auto;
+    gap: 20px; /* Increase gap between boxes */
+    max-width: 1200px; /* Make the container larger */
+    margin: 50px auto;
 }
 
 .story-box {
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #ddd;
+    background-color:beige;
+    padding: 40px; /* Increase padding for larger content */
+    border: 3px solid #ddd;
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
 .story-box:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .story-box h3 {
-    font-size: 1.4em;
+    font-size: 1.8em; /* Increase title size */
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .story-box p {
-    font-size: 1em;
+    font-size:medium; /* Increase text size */
     color: #555;
     margin: 0;
+    line-height: 1.6;
 }
 
 
