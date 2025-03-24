@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cart.push(product);
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
+        alert(`${product.name} added to cart!`);
     }
 
     // Fetch and Display Menu Items
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     div.classList.add("menu-item");
                     div.innerHTML = `
                         <h3>${item.name}</h3>
-                        <p>${item.price}</p>
+                        <p>$${item.price.toFixed(2)}</p>
                         <button class="add-to-cart" data-item='${JSON.stringify(item)}'>Add to Cart</button>
                     `;
                     menuContainer.appendChild(div);
@@ -65,15 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
         cart.forEach(item => {
             const div = document.createElement("div");
             div.classList.add("menu-item");
-            div.innerHTML = `<h3>${item.name}</h3><p>${item.price}</p>`;
+            div.innerHTML = `<h3>${item.name}</h3><p>$${item.price.toFixed(2)}</p>`;
             cartContainer.appendChild(div);
         });
     }
 
     updateCartCount();
 
-    // Menu items for each category
-    const menuItems = {
+     // Menu items for each category
+     const menuItems = {
         "baked-items": [
             { id: 1, name: "Rolls", price: 2.50, image: "Images/rolls1.jpg" },
             { id: 2, name: "Pastries", price: 3.00, image: "Images/Fish-Pastry.jpg" },
@@ -136,42 +137,37 @@ document.addEventListener("DOMContentLoaded", function () {
         ]
     };
 
+
+
     // Render all categories
-    renderMenu('baked-items', menuItems['baked-items']);
-    renderMenu('desserts', menuItems['Desserts']);
-    renderMenu('Bread and Sandwiches', menuItems['Bread and Sandwiches']);
-    renderMenu('Beverages', menuItems['Beverages']);
-    renderMenu('cakes', menuItems['cakes']);
-});
-
-function renderMenu(category, items) {
-    const categoryGrid = document.getElementById(category);
-    items.forEach(item => {
-        const menuItemCard = document.createElement('div');
-        menuItemCard.classList.add('menu-item');
-
-        menuItemCard.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <h4>${item.name}</h4>
-            <p>$${item.price.toFixed(2)}</p>
-            <button onclick="addToCart(${item.id})">Add to Cart</button>
-        `;
-
-        categoryGrid.appendChild(menuItemCard);
+    Object.keys(menuItems).forEach(category => {
+        renderMenu(category, menuItems[category]);
     });
-}
 
-function addToCart(itemId) {
-    const item = Object.values(menuItems).flat().find(item => item.id === itemId);
-    
-    if (!item) {
-        console.error("Item not found");
-        return;
+    function renderMenu(category, items) {
+        const categoryGrid = document.getElementById(category);
+        if (!categoryGrid) return;
+
+        items.forEach(item => {
+            const menuItemCard = document.createElement('div');
+            menuItemCard.classList.add('menu-item');
+
+            menuItemCard.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h4>${item.name}</h4>
+                <p>$${item.price.toFixed(2)}</p>
+                <button class="add-to-cart" data-item='${JSON.stringify(item)}'>Add to Cart</button>
+            `;
+
+            categoryGrid.appendChild(menuItemCard);
+        });
+
+        // Attach event listeners after elements are created
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function () {
+                const product = JSON.parse(this.getAttribute("data-item"));
+                addToCart(product);
+            });
+        });
     }
-
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    alert(`${item.name} added to cart!`);
-    updateCartCount();
-}
+});
