@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // Counter Animation
     const counter = document.getElementById("shop-counter");
