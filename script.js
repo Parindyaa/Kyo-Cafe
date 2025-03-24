@@ -21,60 +21,117 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateCartCount() {
         const cartCountElement = document.getElementById("cart-count");
         if (cartCountElement) {
-            cartCountElement.innerText = cart.length;
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.innerText = totalItems;
         }
     }
 
-    function addToCart(product) {
-        cart.push(product);
+    function saveCart() {
         localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount();
-        alert(`${product.name} added to cart!`);
     }
 
-    // Fetch and Display Menu Items
-    const menuContainer = document.getElementById("menu-items");
-    if (menuContainer) {
-        fetch("products.json")
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(item => {
-                    const div = document.createElement("div");
-                    div.classList.add("menu-item");
-                    div.innerHTML = `
-                        <h3>${item.name}</h3>
-                        <p>$${item.price.toFixed(2)}</p>
-                        <button class="add-to-cart" data-item='${JSON.stringify(item)}'>Add to Cart</button>
-                    `;
-                    menuContainer.appendChild(div);
-                });
+    function renderCart() {
+        const cartContainer = document.getElementById("cart-items");
+        if (!cartContainer) return;
 
-                // Attach event listeners after elements are created
-                document.querySelectorAll(".add-to-cart").forEach(button => {
-                    button.addEventListener("click", function () {
-                        const product = JSON.parse(this.getAttribute("data-item"));
-                        addToCart(product);
-                    });
-                });
-            })
-            .catch(error => console.error("Error loading products:", error));
-    }
+        cartContainer.innerHTML = "";
 
-    // Display Cart Items
-    const cartContainer = document.getElementById("cart-items");
-    if (cartContainer) {
+        if (cart.length === 0) {
+            cartContainer.innerHTML = `<p>Your cart is empty.</p>`;
+            return;
+        }
+
         cart.forEach(item => {
-            const div = document.createElement("div");
-            div.classList.add("menu-item");
-            div.innerHTML = `<h3>${item.name}</h3><p>$${item.price.toFixed(2)}</p>`;
-            cartContainer.appendChild(div);
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+
+            cartItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h4>${item.name}</h4>
+                <p>Price: $${item.price.toFixed(2)}</p>
+                <p>Quantity: <button class="decrease" data-id="${item.id}">-</button> 
+                ${item.quantity} 
+                <button class="increase" data-id="${item.id}">+</button></p>
+                <button class="remove-item" data-id="${item.id}">Remove</button>
+            `;
+
+            cartContainer.appendChild(cartItem);
+        });
+
+        attachCartListeners();
+    }
+
+    function attachCartListeners() {
+        document.querySelectorAll(".increase").forEach(button => {
+            button.addEventListener("click", function () {
+                const productId = parseInt(this.getAttribute("data-id"));
+                const item = cart.find(p => p.id === productId);
+                if (item) {
+                    item.quantity += 1;
+                    saveCart();
+                    renderCart();
+                }
+            });
+        });
+
+        document.querySelectorAll(".decrease").forEach(button => {
+            button.addEventListener("click", function () {
+                const productId = parseInt(this.getAttribute("data-id"));
+                const item = cart.find(p => p.id === productId);
+                if (item && item.quantity > 1) {
+                    item.quantity -= 1;
+                    saveCart();
+                    renderCart();
+                }
+            });
+        });
+
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function () {
+                const productId = parseInt(this.getAttribute("data-id"));
+                cart = cart.filter(p => p.id !== productId);
+                saveCart();
+                renderCart();
+            });
         });
     }
 
-    updateCartCount();
+    // Functionality to add item to cart when "Add to Cart" button is clicked
+    function addToCart(product) {
+        const existingItem = cart.find(item => item.id === product.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        saveCart();
+        updateCartCount();
+    }
 
-     // Menu items for each category
-     const menuItems = {
+    // Attaching event listeners to "Add to Cart" buttons
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function () {
+            const productId = parseInt(this.getAttribute("data-id"));
+            const productName = this.getAttribute("data-name");
+            const productPrice = parseFloat(this.getAttribute("data-price"));
+            const productImage = this.getAttribute("data-image");
+
+            const product = {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage
+            };
+
+            addToCart(product);
+        });
+    });
+
+    updateCartCount();
+    renderCart();
+
+    // Menu items for each category
+    const menuItems = {
         "baked-items": [
             { id: 1, name: "Rolls", price: 2.50, image: "Images/rolls1.jpg" },
             { id: 2, name: "Pastries", price: 3.00, image: "Images/Fish-Pastry.jpg" },
@@ -137,9 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ]
     };
 
+        // Add more categories here
 
 
-    // Render all categories
     Object.keys(menuItems).forEach(category => {
         renderMenu(category, menuItems[category]);
     });
@@ -148,26 +205,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const categoryGrid = document.getElementById(category);
         if (!categoryGrid) return;
 
+        categoryGrid.innerHTML = "";
         items.forEach(item => {
-            const menuItemCard = document.createElement('div');
-            menuItemCard.classList.add('menu-item');
+            const menuItemCard = document.createElement("div");
+            menuItemCard.classList.add("menu-item");
 
             menuItemCard.innerHTML = `
                 <img src="${item.image}" alt="${item.name}">
                 <h4>${item.name}</h4>
                 <p>$${item.price.toFixed(2)}</p>
-                <button class="add-to-cart" data-item='${JSON.stringify(item)}'>Add to Cart</button>
+                <button class="add-to-cart" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}" data-image="${item.image}">Add to Cart</button>
             `;
 
             categoryGrid.appendChild(menuItemCard);
-        });
-
-        // Attach event listeners after elements are created
-        document.querySelectorAll(".add-to-cart").forEach(button => {
-            button.addEventListener("click", function () {
-                const product = JSON.parse(this.getAttribute("data-item"));
-                addToCart(product);
-            });
         });
     }
 });
