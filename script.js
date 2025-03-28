@@ -1,10 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     // Counter Animation
     const counter = document.getElementById("shop-counter");
     if (counter) {
         const target = +counter.getAttribute("data-target");
         let count = 0;
+        let started = false;
 
         const updateCounter = () => {
             if (count < target) {
@@ -13,8 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(updateCounter, 50);
             }
         };
-        updateCounter();
+
+        const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        const onScroll = () => {
+            if (!started && isElementInViewport(counter)) {
+                started = true;
+                updateCounter();
+                window.removeEventListener("scroll", onScroll);
+            }
+        };
+
+        window.addEventListener("scroll", onScroll);
     }
+});
+
 
     // Cart Management
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -221,4 +242,3 @@ document.addEventListener("DOMContentLoaded", function () {
             categoryGrid.appendChild(menuItemCard);
         });
     }
-});
