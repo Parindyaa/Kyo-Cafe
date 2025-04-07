@@ -1,4 +1,3 @@
-
 /* General Reset */
 html, body {
     height: 100%;
@@ -454,7 +453,22 @@ body {
 }
 
 .footer .footer-links ul li {
+    color: white; /* Set font color to white */
     margin: 10px 0;
+}
+
+.footer .footer-links ul li:hover {
+    color: orange; /* Change color to orange on hover */
+}
+
+.footer .footer-links ul li a {
+    color: white; /* Set font color to white */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer .footer-links ul li a:hover {
+    color: orange; /* Change color to orange on hover */
 }
 
 .footer-bottom {
