@@ -124,29 +124,30 @@ document.addEventListener("DOMContentLoaded", function () {
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
-            cart.push({ ...product, quantity: 1 });
+            cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: 1 });
         }
         saveCart();
         updateCartCount();
+        renderCart(); // Ensure the cart is updated visually after adding an item
     }
 
     // Attaching event listeners to "Add to Cart" buttons
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", function () {
-            const productId = parseInt(this.getAttribute("data-id"));
-            const productName = this.getAttribute("data-name");
-            const productPrice = parseFloat(this.getAttribute("data-price"));
-            const productImage = this.getAttribute("data-image");
-
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("add-to-cart")) {
+            const productId = parseInt(event.target.getAttribute("data-id"));
+            const productName = event.target.getAttribute("data-name");
+            const productPrice = parseFloat(event.target.getAttribute("data-price"));
+            const productImage = event.target.getAttribute("data-image");
+    
             const product = {
                 id: productId,
                 name: productName,
                 price: productPrice,
                 image: productImage
             };
-
+    
             addToCart(product);
-        });
+        }
     });
 
     updateCartCount();
