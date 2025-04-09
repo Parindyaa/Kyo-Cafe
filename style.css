@@ -640,3 +640,14 @@ body {
 h1 {
     text-align: center;
 }
+#menu div, #cart div {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+button {
+    margin: 2px;
+}

@@ -6,7 +6,7 @@
     <title>Kyo Cafe - Home</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <script src="cart.js"></script>
+   
 </head>
 <body>
     <div class="navbar">
@@ -28,12 +28,11 @@
 
     <h1>Your Shopping Cart</h1>
 
-        <div id="cart-container"></div>
+        <div id="menu"></div>
 
-        <!-- Checkout and Remove buttons -->
-        <button id="checkout-button" style="display: none;" onclick="checkout()">Checkout</button>
-        <button id="remove-button" style="display: none;" onclick="removeSelectedItems()">Remove Selected</button>
-        
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+        <button onclick="checkoutItems()">Checkout</button>
     
 
   
