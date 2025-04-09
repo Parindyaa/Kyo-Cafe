@@ -38,93 +38,52 @@ document.addEventListener("DOMContentLoaded", function () {
     renderAllMenus();
 });
 
-let cart = [];
-
-function addToCart(id, category) {
-    const item = menuItems[category].find(item => item.id === id);
-    const existingItem = cart.find(c => c.id === id);
-
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({ ...item, quantity: 1, selected: true });
-    }
-
-    renderCart();
-}
-
-function renderCart() {
-    const cartDiv = document.getElementById("cart");
-    cartDiv.innerHTML = "";
-
-    if (cart.length === 0) {
-        cartDiv.innerHTML = "<p>Cart is empty</p>";
-        return;
-    }
-
-    cart.forEach(item => {
-        const itemDiv = document.createElement("div");
-        itemDiv.innerHTML = `
-            <input type="checkbox" onchange="toggleSelect(${item.id})" ${item.selected ? "checked" : ""}>
-            <img src="${item.image}" width="60">
-            ${item.name} - $${item.price.toFixed(2)}
-            <br>
-            Quantity: 
-            <button onclick="changeQuantity(${item.id}, -1)">-</button>
-            ${item.quantity}
-            <button onclick="changeQuantity(${item.id}, 1)">+</button>
-            <br>
-            <button onclick="removeFromCart(${item.id})">Remove</button>
-        `;
-        cartDiv.appendChild(itemDiv);
-    });
-}
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
 }
 
-function addToCart(id, category) {
-    const item = menuItems[category].find(item => item.id === id);
-    const existingItem = cart.find(c => c.id === id);
+function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = document.getElementById("cart-count");
+    if (cartCount) cartCount.textContent = count;
+}
 
-    if (existingItem) {
-        existingItem.quantity++;
+function addToCart(id, categoryKey) {
+    const item = menuItems[categoryKey].find(item => item.id === id);
+    const existing = cart.find(i => i.id === id);
+    if (existing) {
+        existing.quantity++;
     } else {
         cart.push({ ...item, quantity: 1, selected: true });
     }
-
-    saveCart(); //  save to localStorage
-    renderCart();
+    saveCart();
+    alert(`${item.name} added to cart!`);
 }
 
-function changeQuantity(id, delta) {
-    const item = cart.find(i => i.id === id);
-    if (!item) return;
+function renderMenu() {
+    for (let category in menuItems) {
+        const container = document.getElementById(category);
+        if (!container) continue;
 
-    item.quantity += delta;
-    if (item.quantity <= 0) {
-        cart = cart.filter(i => i.id !== id);
+        menuItems[category].forEach(item => {
+            const div = document.createElement("div");
+            div.className = "menu-item";
+            div.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" width="100">
+                <h4>${item.name}</h4>
+                <p>$${item.price.toFixed(2)}</p>
+                <button onclick="addToCart(${item.id}, '${category}')">Add to Cart</button>
+            `;
+            container.appendChild(div);
+        });
     }
-
-    saveCart(); // 
-    renderCart();
+    updateCartCount();
 }
 
-function removeFromCart(id) {
-    cart = cart.filter(i => i.id !== id);
-    saveCart(); // 
-    renderCart();
-}
-
-function toggleSelect(id) {
-    const item = cart.find(i => i.id === id);
-    if (item) {
-        item.selected = !item.selected;
-        saveCart(); // 
-    }
-}
-
+document.addEventListener("DOMContentLoaded", renderMenu);
 
 // Menu items data
 const menuItems = {
